@@ -1,0 +1,56 @@
+{% from 'macros.html' import leaderboard %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/main.css">
+    <title>Leaderboards</title>
+    <h1>{{date}}</h1>
+</head>
+
+<body>
+    <div class='allTablesHolder'>
+
+        <select name="region" id="region">
+            <option value="us">US</option>
+            <option value="jp">Japan</option>
+            <option value="all">All</option>
+          </select>
+
+        <div id='origin'>
+            <!-- <p>pc here</p> -->
+            <div class="imgHolder"><img src="../static/origin.png" alt="origin" height="50px" width="50px"></div>
+            {{ leaderboard(dataPC) }}
+
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div id='psn'>
+            <!-- <p> psn here </p> -->
+            <div class="imgHolder"><img src="../static/psn.png" alt="psn" height="50px" width="50px"></div>
+            {{ leaderboard(dataPSN) }}
+        </div>
+
+        <div id='xbox'>
+            <!-- <p>xbox here</p> -->
+            <div class="imgHolder"><img src="../static/xbox.png" alt="xbox" height="50px" width="50px"></div>
+            {{ leaderboard(dataXB) }}
+
+        </div>
+    </div>
+</body>
+<!-- 
+<footer>
+    <h2 class="foot">Hello I am the footer.</h2>
+</footer> -->
+
+</html>

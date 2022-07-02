@@ -1,0 +1,91 @@
+body {
+    background-image: url(../static/backg.jpg); 
+    color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 45px;
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* allTablesHolder is the div that holds the entire page basically. All leaderboard divs. */
+.allTablesHolder {
+    width: 100%;
+    height: fit-content;
+}
+
+.leaderboard {
+    opacity: 0.85;
+    width: auto;
+    position: relative;
+    top: 53px;
+}
+
+#origin {
+    width: 100%;
+    min-height: 100px;
+    float:none;
+    display: flex;
+    justify-content: center;
+}
+
+#psn {
+    width: 50%;
+    min-height: 100px;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+#xbox {
+    width: 50%;
+    min-height: 100px;
+    float: left;
+    display: flex;
+    justify-content: center;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/* Table Stuff */
+
+td {
+    text-align: left;
+    color: whitesmoke;
+}
+
+th {
+    text-align: left;
+    color: whitesmoke;
+}
+
+tr:nth-child(even) {
+    background-color: red;
+}
+
+tr:nth-child(odd) {
+    background-color: black;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+footer{
+    text-align: center;
+    position: relative;
+    top: 80px;
+    color: aqua;
+    height: 25px;
+}
+
+.imgHolder{
+    position: absolute;
+}

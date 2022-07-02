@@ -1,0 +1,8 @@
+<!-- macro for inserting actual tables with leaderboard data -->
+
+{% macro leaderboard(dataTable) %}
+    <div class="leaderboard"> 
+        {{ dataTable | safe }}
+    </div>
+{% endmacro %}
+
