@@ -11,19 +11,9 @@ app = Flask(__name__)
 # def index():
 #     return render_template('index.html')
 
-# other
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# other
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
 @app.route('/')
-def index():
-    x = webpex.allLinks()
+def all():
+    x = webpex.allLink()
     tablePC = scrapedTable(x[0])
     tablePS = scrapedTable(x[1])
     tableXB = scrapedTable(x[2])
@@ -32,6 +22,41 @@ def index():
     xbox = tableXB.createDataFrame()
     today = datetime.date.today()
 
+
+    return render_template("index.html", 
+                            dataPC=pc.to_html(classes='table table-stripped'),
+                            dataPSN=psn.to_html(classes='table table-stripped'),
+                            dataXB=xbox.to_html(classes='table table-stripped'),
+                            date=today.strftime('%d, %b %Y'))
+
+@app.route('/us')
+def us():
+    x = webpex.usLink()
+    tablePC = scrapedTable(x[0])
+    tablePS = scrapedTable(x[1])
+    tableXB = scrapedTable(x[2])
+    pc = tablePC.createDataFrame()
+    psn = tablePS.createDataFrame()
+    xbox = tableXB.createDataFrame()
+    today = datetime.date.today()
+
+
+    return render_template("index.html", 
+                            dataPC=pc.to_html(classes='table table-stripped'),
+                            dataPSN=psn.to_html(classes='table table-stripped'),
+                            dataXB=xbox.to_html(classes='table table-stripped'),
+                            date=today.strftime('%d, %b %Y'))
+
+@app.route('/jp')
+def jp():
+    x = webpex.jpLink()
+    tablePC = scrapedTable(x[0])
+    tablePS = scrapedTable(x[1])
+    tableXB = scrapedTable(x[2])
+    pc = tablePC.createDataFrame()
+    psn = tablePS.createDataFrame()
+    xbox = tableXB.createDataFrame()
+    today = datetime.date.today()
 
     return render_template("index.html", 
                             dataPC=pc.to_html(classes='table table-stripped'),

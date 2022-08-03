@@ -15,34 +15,34 @@
 <body>
     <div class='allTablesHolder'>
 
-        <select name="region" id="region">
-            <option value="us">US</option>
-            <option value="jp">Japan</option>
-            <option value="all">All</option>
+        <select name="form" onchange="location = this.value;" aria-placeholder="Select Region">
+                <option value="{{ url_for('all')}}">All</option>
+                <option value="{{ url_for('us')}}">United States</option>
+                <option value="{{ url_for('jp')}}">Japan</option>
           </select>
 
         <div id='origin'>
             <!-- <p>pc here</p> -->
-            <div class="imgHolder"><img src="../static/origin.png" alt="origin" height="50px" width="50px"></div>
+            <div class="imgHolder">
+                <img src="../static/origin.png" alt="origin" height="50px" width="50px">
+            </div>
             {{ leaderboard(dataPC) }}
 
         </div>
 
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-
         <div id='psn'>
             <!-- <p> psn here </p> -->
-            <div class="imgHolder"><img src="../static/psn.png" alt="psn" height="50px" width="50px"></div>
+            <div class="imgHolder">
+                <img src="../static/psn.png" alt="psn" height="50px" width="50px">
+            </div>
             {{ leaderboard(dataPSN) }}
         </div>
 
         <div id='xbox'>
             <!-- <p>xbox here</p> -->
-            <div class="imgHolder"><img src="../static/xbox.png" alt="xbox" height="50px" width="50px"></div>
+            <div class="imgHolder">
+                <img src="../static/xbox.png" alt="xbox" height="50px" width="50px">
+            </div>
             {{ leaderboard(dataXB) }}
 
         </div>
