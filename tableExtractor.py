@@ -43,7 +43,8 @@ class scrapedTable:
 
             df = df.append({'Rank': rank,  'Username': user, 'RP': rp, 'Account Level': accLvl}, ignore_index=True)
 
-        #df.drop(df.columns[[0]], axis=1, inplace=True)
+        df = df.style.set_table_styles([dict(selector='th', props=[('text-align', 'center')])])
+        df.set_properties(**{'text-align': 'center'}).hide_index()
         
 
         return df

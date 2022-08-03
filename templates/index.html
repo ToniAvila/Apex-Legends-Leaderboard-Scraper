@@ -16,7 +16,7 @@
     <div class='allTablesHolder'>
 
         <select name="form" onchange="location = this.value;" aria-placeholder="Select Region">
-                <option value="{{ url_for('all')}}">All</option>
+                <option value="{{ url_for('all')}}" selected>All</option>
                 <option value="{{ url_for('us')}}">United States</option>
                 <option value="{{ url_for('jp')}}">Japan</option>
           </select>
